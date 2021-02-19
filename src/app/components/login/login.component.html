@@ -1,0 +1,26 @@
+<p-messages [(value)]="messages" [enableService]="false"></p-messages>
+<h1>Formulario de Login</h1>
+<br>
+<form [formGroup]="form" (submit)="login()">
+
+    <div class="p-field p-grid">
+        <label for="username" style="width:100px">Usuario</label>
+        <div class="p-col">
+            <input id="username" type="text" pInputText formControlName="username" size="50">
+        </div>
+    </div>
+    <div class="p-field p-grid">
+
+        <label for="password" style="width:100px">Password:</label>
+        <div class="p-col">
+            <input type="password" pPassword id="password" placeholder="Contraseña:" formControlName="password"
+                size="50" [minLength]="5" autocomplete="on">
+        </div>
+    </div>
+    <div class="p-field p-grid">
+        <div class="p-col">
+            <button pButton type="submit" label="Login"></button>
+        </div>
+    </div>
+    
+</form>

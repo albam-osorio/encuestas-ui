@@ -1,0 +1,16 @@
+<br>
+<div class="container">
+    <div class="p-grid">
+        <div class="p-col">
+            <button pButton type="button" label="Formulario de encuesta" [routerLink]="['/polls-add']"></button>
+        </div>
+        <div class="p-col">
+            <button pButton type="button" label="Consultar respuestas" [routerLink]="['/polls']">
+            </button>
+        </div>
+        <div class="p-col">
+            <button pButton type="button" label="Salir" (click)="logout()">
+            </button>
+        </div>
+    </div>
+</div>

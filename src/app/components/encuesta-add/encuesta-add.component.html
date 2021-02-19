@@ -1,0 +1,38 @@
+<p-messages [(value)]="messages" [enableService]="false"></p-messages>
+
+<div class="p-d-flex p-ai-center p-jc-between">
+    <h1>Formulario de encuesta</h1>
+    <button pButton type="button" label="Ir a Inicio" icon="pi pi-home" [routerLink]="['']">
+    </button>
+</div>
+
+<form [formGroup]="form" (submit)="submit()">
+    <div class="p-field p-grid">
+        <label for="numeroDocumento" style="width:100px">Número de documento:</label>
+        <div class="p-col">
+            <input type="text" id="numeroDocumento" formControlName="numeroDocumento" size="50" required pInputText>
+        </div>
+    </div>
+    <div class="p-field p-grid">
+        <label for="email" style="width:100px">Email:</label>
+        <div class="p-col">
+            <input type="text" id="email" formControlName="email" size="50" required pInputText>
+        </div>
+    </div>
+    <div class="p-field p-grid">
+        <label for="comentarios" style="width:100px">Comentarios:</label>
+        <div class="p-col">
+            <textarea [rows]="5" [cols]="30" id="comentarios" formControlName="comentarios" required
+                pInputTextarea></textarea>
+        </div>
+    </div>
+    <div class="p-field p-grid">
+        <label for="marca" style="width:100px">Marca:</label>
+        <div class="p-col">
+            <p-dropdown [options]="marcas" formControlName="marca" placeholder="Seleccionar">
+            </p-dropdown>
+        </div>
+    </div>
+
+    <button pButton type="submit" label="Guardar" icon="pi pi-save" [disabled]="!form.valid"></button>
+</form>

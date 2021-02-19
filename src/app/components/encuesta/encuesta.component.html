@@ -1,0 +1,53 @@
+<div class="container">
+  <p-messages [(value)]="messages" [enableService]="false"></p-messages>
+
+  <p-table [value]="records">
+    <ng-template pTemplate="caption">
+      <div class="p-d-flex p-ai-center p-jc-between">
+        <h1>Consultar Respuestas</h1>
+        <button pButton type="button" label="Ir a Inicio" icon="pi pi-home" [routerLink]="['']">
+        </button>
+      </div>
+    </ng-template>
+    <ng-template pTemplate="header">
+      <tr>
+        <th>ID</th>
+        <th>Documento</th>
+        <th>Email</th>
+        <th>Cometarios</th>
+        <th>Marca</th>
+        <th>Fecha</th>
+        <th></th>
+      </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-r>
+      <tr>
+        <td>
+          {{r.id}}
+        </td>
+        <td>
+          {{r.documentNumber}}
+        </td>
+        <td>
+          {{r.email}}
+        </td>
+        <td>
+          {{r.comments}}
+        </td>
+        <td>
+          {{r.codigoMarca}}
+        </td>
+        <td>
+          {{r.fechaCreacion | date: 'yyyy-MM-dd HH:mm:ss'}}
+        </td>
+        <td>
+          <button pButton pRipple icon="pi pi-trash" class="p-button-rounded p-button-warning"
+            (click)="delete(r)"></button>
+        </td>
+      </tr>
+    </ng-template>
+  </p-table>
+
+</div>
+
+<p-confirmDialog [style]="{width: '450px'}"></p-confirmDialog>
